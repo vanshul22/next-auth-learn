@@ -49,7 +49,7 @@ export const options: NextAuthOptions = {
 
                 if (credentials?.email === user.email && credentials?.password === user.password) {
                     // Any object returned will be saved in `user` property of the JWT
-                    return { id: user.id };
+                    return { id: user.id, name: user.name, email: user.email };
                 } else {
                     // If you return null then an error will be displayed advising the user to check their details.
                     return null;
@@ -109,5 +109,7 @@ export const options: NextAuthOptions = {
             clientId: process.env.ZOOM_CLIENT_ID as string,
             clientSecret: process.env.ZOOM_CLIENT_SECRET as string
         })
-    ]
+    ], pages: {
+        signIn: "/auth/signin"
+    }
 }

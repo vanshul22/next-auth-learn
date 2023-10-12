@@ -1,7 +1,11 @@
 // components/Navbar.js
+"use client"
 import Link from 'next/link';
+import { signIn, signOut } from "next-auth/react";
 
 const Navbar = () => {
+
+
     return (
         <nav className="bg-blue-500 p-4">
             <div className="container mx-auto">
@@ -19,7 +23,13 @@ const Navbar = () => {
                         <Link href="/services">Services</Link>
                     </li>
                     <li>
-                        <Link href="/api/auth/signout">Sign Out</Link>
+                        <Link href="/api/auth/signout"> Redirect Sign Out</Link>
+                    </li>
+                    <li>
+                        <button onClick={() => signOut()}>Click signout</button>
+                    </li>
+                    <li>
+                        <button onClick={() => signIn()}>Click signin</button>
                     </li>
                 </ul>
             </div>
