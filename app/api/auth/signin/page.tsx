@@ -3,7 +3,7 @@ import { signIn } from 'next-auth/react'
 import Image from 'next/image';
 import React, { useState } from 'react'
 
-const signInPage = () => {
+const SignInPage = () => {
 
     const [user, setUser] = useState({ email: '', password: '' });
 
@@ -117,4 +117,4 @@ const signInPage = () => {
     )
 }
 
-export default signInPage;
+export default SignInPage;
